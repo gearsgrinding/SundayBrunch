@@ -1,0 +1,27 @@
+<% provide(:title, @user.name) %>
+
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+
+    <p>
+      Email
+      <%= @user.email%>
+    </p>
+  </aside>
+  <div>
+    <section class="stats">
+      <%= render 'shared/followers' %>
+    </section>
+  </aside>
+  <div>
+    <%= render 'follower_form' if logged_in? %>
+    <% if @user.songs.any? %>
+      <h3>songs (<%= @user.songs.count %>)</h3>
+      <ol class="songs">
+        <%= render @songs %>
+      </ol>
+      <%= will_paginate @songs %>
+    <% end %>

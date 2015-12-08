@@ -1,0 +1,28 @@
+<% if logged_in? %>
+  <div>
+    <aside >
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="followers">
+        <%= render 'shared/followers' %>
+      </section>
+      <section class="song_form">
+        <%= render 'shared/song_form' %>
+      </section>
+    </aside>
+    <div >
+      <h3>Song Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div >
+    <h1>Welcome to the Brunch :D</h1>
+
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
+
+<% end %>

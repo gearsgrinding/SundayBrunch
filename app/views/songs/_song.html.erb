@@ -1,0 +1,14 @@
+<li id="song-<%= song.id %>">
+  <span class="user"><%= link_to song.user.name, song.user %></span>
+  <span class="content"><%= song.song %></span>
+  <%= puts song.uri %>
+  <% if (song.uri.nil?||song.uri.empty?) %>
+  <% temp = "" %>
+  <% else %>
+  <% temp = song.uri%>
+  <% end %>
+  <iframe src=<%="https://embed.spotify.com/?uri="+temp%> width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(song.created_at) %> ago.
+  </span>
+</li>

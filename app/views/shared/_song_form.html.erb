@@ -1,0 +1,7 @@
+<%= form_for(@song) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div >
+    <%= f.text_area :song, placeholder: "Add new Song" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
